@@ -1,0 +1,66 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+input::placeholder{
+    font-weight: 700;
+    font-size: 1rem;
+    color: black;
+    
+}
+
+
+main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.inputAddNew{
+    
+    height: 1.5rem;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: inline-block;
+    margin: 0.1rem;
+    padding: 0.1rem;
+   
+}
+
+.inputAddNew[type = submit]{
+    width: 6rem;
+    height: 2rem;
+    font-weight: 700;
+    color: white;
+    background-color: orangered;
+}
+
+.inputAddNew[type = file]{
+    width: 80%;
+}
+
+#addData{
+
+    
+    height: 50%;
+    position: relative;
+    
+}
+
+
+
+
+
+#viewTable{
+
+    width: 30%;
+    height: 50%;
+    overflow-y: scroll;
+}
