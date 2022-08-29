@@ -43,7 +43,7 @@ function refreshTable(){
         cache: false,
         success: function(data){
             let table = document.getElementById("viewTableTable");
-            table.innerHTML = '<tr><th>ИИН</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Фото</th><th>Удалить</th> </tr>';
+            table.innerHTML = '<tr><th>ИИН</th><th>Фамилия</th><th>Имя</th><th>Отчество</th><th>Фото</th></tr>';
             let dataArray = eval(data)
             
             dataArray.forEach(function(event){
