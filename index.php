@@ -20,7 +20,7 @@
                 <label for="date">Дата рождения:</label><br><input class="inputAddNew" type="date" name="date" value="1999-12-30" placeholder="Дата рождения"> <br>
                 <label for="address">Адрес:</label><br><input class="inputAddNew" type="text" name="address"> <br>
                 <label for="phone_number">Телефон:</label><br><input class="inputAddNew" type="tel" pattern="[0-9]{11}"required name="phone_number"> <br>
-                <label for="photo">Фотография:</label><br><input id="photoUpload" class="inputAddNew" type="file" src="" alt=""> <br>
+                <label for="photo">Фотография:(65КБ макс.)</label><br><input id="photoUpload" class="inputAddNew" type="file" src="" alt=""> <br>
                 <input class="inputAddNew" type="submit" value="Добавить" >
             </form>
         </div>
@@ -35,8 +35,17 @@
                 </table> 
         </div>
         <div id="editPerson">
+            <img src="" alt="" height="100px"><input type="file" id="changePhotoInput"><button  id="changePhotoSubmit">Изменить фото</button>
             <form name="editPersonForm" id="editPersonForm" action="" action="#" method="post" enctype="multipart/form-data">
-                <input type="submit" value="Изменить">
+            <input class="inputChange" type="text" name="id" placeholder="ИИН" disabled> <br>
+                <input class="inputChange" type="text" name="last_name" placeholder="Фамилия"> <br>
+                <input class="inputChange" type="text" name="first_name" placeholder="Имя"> <br>
+                <input class="inputChange" type="text" name="middle_name" placeholder="Отчество"> <br>
+                <label for="date">Дата рождения:</label><br><input class="inputChange" type="date" name="date" value="1999-12-30" placeholder="Дата рождения"> <br>
+                <label for="address">Адрес:</label><br><input class="inputChange" type="text" name="address"> <br>
+                <label for="phone_number">Телефон:</label><br><input class="inputChange" type="tel" pattern="[0-9]{11}"required name="phone_number"> <br>
+                <input class="inputAddNew" type="submit" value="Изменить" >
+                
             </form>
             <button onclick="deletePerson(this)">Удалить</button>
         </div>

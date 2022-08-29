@@ -83,7 +83,7 @@ function refreshTable(){
 }
 
 //let dateOld = 0;
-
+/*
 function editPerson(event){
     id = event.children[0].innerText;
     last_name = event.children[1].innerText;
@@ -188,7 +188,69 @@ function editPerson(event){
         }
     })
     
+}*/
+
+
+
+
+function editPerson(event){
+    id = event.children[0].innerText;
+    last_name = event.children[1].innerText;
+    first_name = event.children[2].innerText;
+    middle_name = event.children[3].innerText;
+    photo = event.children[4].innerText;
+    let form_data = new FormData();
+    form_data.append('id', id);
+
+    $.ajax({
+        type: "POST",
+        url: "getDataPerson.php",
+        processData: false,
+        contentType: false,
+        cache: false,
+        data: form_data,
+        success: function(data){
+            fillEditPersonForm(data);
+            
+        }, 
+        error: function(){
+            alert('Такой ИИН уже существует')
+        }
+    })
+    
 }
+
+function fillEditPersonForm(data){
+    let formHolder = document.getElementById("editPerson");
+    let form = document.getElementById("editPersonForm");
+    console.log(form);
+    formHolder.style.top = "10vh";
+    //table.innerHTML = '';
+    let dataArray = eval(data)
+    //console.log(eval(data));
+    dataArray.forEach(function(event){
+        img = document.createElement('img');
+        img.src = event.img;
+        img.style.height = '50px';
+        form[0].value = event.id;
+        form[1].value = event.last_name;
+        form[2].value = event.first_name;
+        form[3].value = event.middle_name;
+        form[4].value = event.date;
+        form[5].value = event.address;
+        form[6].value = event.phone_number;
+        formHolder.firstElementChild.src = event.img;
+        
+       
+        
+      
+    })
+    //img = document.createElement('img');
+    //img.src = data;
+    //document.getElementById("viewTable").appendChild(img);
+    
+}
+
 
 $("#editPersonForm").submit(function(event){
     event.preventDefault();
@@ -246,3 +308,38 @@ function deletePerson(event){
     })
     refreshTable();
 }
+
+$('#changePhotoSubmit').click(function(event){
+    let formHolder = document.getElementById("editPerson");
+    formHolder.style.top = "-500vh";
+
+    //let img = event.parentElement.children[1].value;
+    let id = formHolder.children[3][0].value;
+    console.log(id);
+    //console.log(id);
+    //alert(file_data);
+    let file_data = $('#changePhotoInput').prop('files')[0];
+    let form_data = new FormData();
+    let form = document.querySelectorAll(".inputAddNew");
+    form_data.append('file', file_data);
+    form_data.append('id', id);
+
+
+    $.ajax({
+        type: "POST",
+        url: "changePhotoPerson.php",
+        data: form_data,
+        processData: false,
+        contentType: false,
+        cache: false,
+        mimeType: 'multipart/form-data',
+
+        success: function(data){
+            console.log(data)
+            refreshTable();
+        }, 
+        error: function(){
+            alert("Изображение слишком большое")
+        }
+    });
+})
