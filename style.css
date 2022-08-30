@@ -43,7 +43,7 @@ main{
 }
 
 .inputAddNew[type = file]{
-    width: 80%;
+    width: 12rem;    
 }
 
 #addData{

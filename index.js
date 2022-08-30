@@ -26,10 +26,16 @@ $("#formAddData").submit(function(event){
             mimeType: 'multipart/form-data',
 
         success: function(data){
-            document.getElementById("viewTable").innerText = data;
+            
         }
     });
     refreshTable();
+    form.forEach(function(event){
+        if(event.type != 'submit'){
+            event.value = '';
+
+        }
+    })
 })
 
 function refreshTable(){
@@ -343,3 +349,7 @@ $('#changePhotoSubmit').click(function(event){
         }
     });
 })
+
+function checkPhoneNumber(event){
+    console.log(event);
+}

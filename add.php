@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ERROR);
 $mysqli = mysqli_connect("localhost", "testuser", "testpassword", "sobes");
 
 
