@@ -12,17 +12,17 @@
     
     <main>
         <div id="addData">
-            <form name="formAddData" id="formAddData" action="#" method="post" enctype="multipart/form-data">
-            <input class="inputAddNew" type="text" name="id" placeholder="ИИН"> <br>
-                <input class="inputAddNew" type="text" name="last_name" placeholder="Фамилия"> <br>
-                <input class="inputAddNew" type="text" name="first_name" placeholder="Имя"> <br>
-                <input class="inputAddNew" type="text" name="middle_name" placeholder="Отчество"> <br>
-                <label for="date">Дата рождения:</label><br><input class="inputAddNew" type="date" name="date" value="1999-12-30" placeholder="Дата рождения"> <br>
-                <label for="address">Адрес:</label><br><input class="inputAddNew" type="text" name="address"> <br>
-                <label for="phone_number">Телефон:</label><br><input onchange="checkPhoneNumber(this)"  class="inputAddNew" type="tel" pattern="(\+7[0-9]{10}|8[0-9]{10})" required name="phone_number" placeholder="+77051234567"><br>
-                <label for="photo">Фотография:(65КБ макс.)</label><br><input id="photoUpload" class="inputAddNew" type="file" src="" alt=""> <br>
-                <input class="inputAddNew" type="submit" value="Добавить" >
-            </form>
+        <form name="formAddData" id="formAddData" action="#" method="post" enctype="multipart/form-data">
+            <label for="id">ИИН</label><input class="inputAddNew" type="text" name="id" placeholder="123456789123" pattern="([0-9]{12})" required> <br>
+            <input class="inputAddNew" type="text" name="last_name" placeholder="Фамилия"> <br>
+            <input class="inputAddNew" type="text" name="first_name" placeholder="Имя"> <br>
+            <input class="inputAddNew" type="text" name="middle_name" placeholder="Отчество"> <br>
+            <label for="date">Дата рождения:</label><br><input class="inputAddNew" type="date" name="date" value="1999-12-30" placeholder="Дата рождения"> <br>
+            <label for="address">Адрес:</label><br><input class="inputAddNew" type="text" name="address"> <br>
+            <label for="phone_number">Телефон:</label><br><input onchange="checkPhoneNumber(this)"  class="inputAddNew" type="tel" pattern="(\+7[0-9]{10}|8[0-9]{10})" required name="phone_number" placeholder="+77051234567"><br>
+            <label for="photo">Фотография:(65КБ макс.)</label><br><input id="photoUpload" class="inputAddNew" type="file" src="" alt=""> <br>
+            <input class="inputAddNew" type="submit" value="Добавить" >
+        </form>
         </div>
         <div id="viewTable">
             <table id="viewTableTable">

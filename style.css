@@ -24,7 +24,7 @@ main{
 }
 
 .inputAddNew{
-    
+        
     height: 1.5rem;
     border: 1px solid gray;
     border-radius: 10px;
@@ -32,6 +32,9 @@ main{
     margin: 0.1rem;
     padding: 0.1rem;
    
+}
+.inputAddNew:nth-child(1) {
+    width: 10px;
 }
 
 .inputAddNew[type = submit]{
